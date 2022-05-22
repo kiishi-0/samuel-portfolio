@@ -1,23 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import LandingSection from './Components/LandingSection/LandingSection';
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import styled from 'styled-components';
+import Nav from './Components/Nav/Nav';
+import AboutSection from './Components/AboutSection/AboutSection';
+import WorkedSection from './Components/WorkedSection/WorkedSection';
+
+
+const ComponentsWrapper = styled.div`
+  width: 75%;
+
+`
 
 function App() {
+
+
+  const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+      setLoading(true)
+      setTimeout(() => {setLoading(false)}, 1000)
+    },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <ComponentsWrapper>
+        {loading ? (
+          <div className="sweet-loading">
+            <ClimbingBoxLoader color={'#59D9B5'} loading={loading} size={30} />
+          </div>
+          )
+          : 
+          (
+          <div className="App-Container">
+            <Nav></Nav>
+            <LandingSection ></LandingSection>
+            <AboutSection ></AboutSection>
+            <WorkedSection></WorkedSection>
+          </div>
+          )
+        }
+      </ComponentsWrapper>
+      
+      
     </div>
   );
 }

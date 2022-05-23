@@ -139,6 +139,7 @@ const JobLocationLink = styled.a`
 export default function WorkedSection() {
 
     const [jobInfo, setJobInfo] = useState(Jobs[0])
+    // const [active/]
     const newJobInfo = (e) =>{
         let ans = e.target.value
         console.log(ans)

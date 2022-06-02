@@ -58,9 +58,11 @@ export default function LandingSection() {
                 I build things for the web.
             </JobInfoText>
             <MoreInfoText>
-                I’m a software engineer specializing in building (and occasionally 
-                designing) exceptional digital experiences. Currently, I’m 
-                focused on building accessible, human-centered products at 
+            An innovative multi-discipline and Solution oriented 
+            IT professional seeking a position in any network 
+            engineering firm where my dedication ,ability to meet 
+            goals to troubleshooting skills can be fully 
+            utilized for the better growth and profit of company
             </MoreInfoText>
         </BigTextDiv>
     </LandingSectionDiv>

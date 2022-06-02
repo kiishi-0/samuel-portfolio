@@ -27,7 +27,7 @@ const PlacesDiv = styled.div`
     justify-content: flex-start;
     flex-direction: column;
     text-align: left;
-    width: 150px;
+    width: 230px;
     // background: red;
     border-left: 1px solid #002e69;
     // margin: 25px 0;

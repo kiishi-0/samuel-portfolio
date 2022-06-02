@@ -157,7 +157,7 @@ export default function WorkedSection() {
                 </PlacesDiv>
                 <JobInfoDiv>
                     <JobIntro>
-                        <Job>{jobInfo.title} <JobLocation>@<JobLocationLink href='#'>{jobInfo.cname}</JobLocationLink></JobLocation></Job>
+                        <Job>{jobInfo.title} <JobLocation>@<JobLocationLink href='#' target="_blank">{jobInfo.cname}</JobLocationLink></JobLocation></Job>
                         <JobDate>{jobInfo.date}</JobDate>
                     </JobIntro>
                     <JobDesc>

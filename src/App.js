@@ -7,6 +7,7 @@ import Nav from './Components/Nav/Nav';
 import AboutSection from './Components/AboutSection/AboutSection';
 import WorkedSection from './Components/WorkedSection/WorkedSection';
 import Footer from './Components/Footer/Footer';
+import PreviousWorksSection from './Components/PreviousWorksSection/PreviousWorksSection';
 
 
 const ComponentsWrapper = styled.div`
@@ -40,6 +41,7 @@ function App() {
             <LandingSection ></LandingSection>
             <AboutSection ></AboutSection>
             <WorkedSection></WorkedSection>
+            <PreviousWorksSection></PreviousWorksSection>
             <Footer></Footer>
           </div>
           )

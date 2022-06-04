@@ -11,9 +11,10 @@ const PreviousSection = styled.section`
     // align-items: center;
     // justify-content: center;
     height: 70vh;
-    background: green;
-    display: grid;
+    
+    
 `
+
 const WorkInfo = styled.div`
     display: flex;
     align-items: center;
@@ -22,15 +23,23 @@ const WorkInfo = styled.div`
 const WorkLink = styled.a`
     tect-decoration: none;
 `
-
+const WorkContentDiv = styled.div`
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    background: green;
+`
 
 export default function PreviousWorksSection() {
   return (
     <PreviousSection>
         <SectionTitle title="Some Thing I've Built" pos="3"/>
-        <WorkInfo>
-            <WorkInfoDiv workName="HQ CINEMAS"></WorkInfoDiv>
-        </WorkInfo>
+        <WorkContentDiv>
+            {/* <WorkInfo> */}
+                <WorkInfoDiv workName="HQ CINEMAS"></WorkInfoDiv>
+            {/* </WorkInfo> */}
+        </WorkContentDiv>
+        
     </PreviousSection>
   )
 }

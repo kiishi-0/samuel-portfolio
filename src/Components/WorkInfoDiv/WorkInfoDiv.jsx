@@ -3,14 +3,15 @@ import styled from 'styled-components'
 
 
 const WorkContent = styled.div`
+    grid-column: 6 / -1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    // width: 400px;
     text-align: right;
     background: red;
-    justify-self: end;
+    // justify-self: end;
 `
 // const WorkImageDiv = styled.div`
 //     width: 350px;

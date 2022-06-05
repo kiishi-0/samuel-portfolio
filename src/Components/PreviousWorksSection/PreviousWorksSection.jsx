@@ -27,7 +27,7 @@ const WorkContentDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 10px;
-    background: green;
+    // background: green;
 `
 
 export default function PreviousWorksSection() {
@@ -36,6 +36,7 @@ export default function PreviousWorksSection() {
         <SectionTitle title="Some Thing I've Built" pos="3"/>
         <WorkContentDiv>
             {/* <WorkInfo> */}
+            
                 <WorkInfoDiv workName="HQ CINEMAS"></WorkInfoDiv>
             {/* </WorkInfo> */}
         </WorkContentDiv>

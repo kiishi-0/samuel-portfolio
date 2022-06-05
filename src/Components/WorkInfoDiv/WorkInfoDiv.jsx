@@ -4,14 +4,14 @@ import styled from 'styled-components'
 
 const WorkContent = styled.div`
     grid-column: 7 / -1;
+    grid-row: 1/2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 10;
     justify-content: center;
-    // width: 400px;
     text-align: right;
-    // background: red;
-    // justify-self: end;
 `
 // const WorkImageDiv = styled.div`
 //     width: 350px;

@@ -44,7 +44,7 @@ const ImageDiv = styled.div`
 `
 export default function Footer() {
   return (
-    <FooterContainer>
+    <FooterContainer id="contacts">
       <ElementsDiv>
         {/* <ImageDiv>
           <LogoImage src={github} alt="gitHub" />

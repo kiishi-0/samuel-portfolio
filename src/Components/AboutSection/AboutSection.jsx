@@ -11,7 +11,7 @@ const AboutSectionDiv = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 40px;
+    padding: 40px 0 100px;
 
 `
 const AboutContent = styled.div`
@@ -23,6 +23,9 @@ const AboutContent = styled.div`
     justify-content: center;
     div{
         flex: 1;
+    }
+    @media(max-width: 805px){
+        flex-direction: column;
     }
 `
 // const AboutTitleDiv = styled.div`
@@ -62,7 +65,10 @@ const ImageDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media(max-width: 805px){
+        margin-top: 50px;
 
+    }
 `
 const ImageContainer = styled.picture`
     width: 300px;
@@ -85,10 +91,9 @@ const ImageContainer = styled.picture`
     :hover:before{
         left: 2.5%; right: 0; bottom: 0; top: 2.5%;
     }
-    // &img:hover + :before{
-        
-    //     left: 10%; right: 0; bottom: 0; top: 10%;
-    // }
+    @media(max-width: 375px){
+        width: 250px;
+    }
 `
 const SamuelImage = styled.img`
     position: relative;

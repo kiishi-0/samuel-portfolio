@@ -11,7 +11,8 @@ import PreviousWorksSection from './Components/PreviousWorksSection/PreviousWork
 
 
 const ComponentsWrapper = styled.div`
-  width: 75%;
+  width: 100%;
+  padding: 0 10%;
 
 `
 

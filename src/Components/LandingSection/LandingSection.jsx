@@ -37,16 +37,19 @@ const Namer = styled.h1`
 `
 const JobInfoText = styled.h2`
     color: #818DA6;
-    font-size: clamp(35px, 8vw, 70px);
+    font-size: clamp(40px, 8vw, 70px);
 `
 const MoreInfoText = styled.p`
     font-size: 20px;
     color: #818DA6;
-    width: 65%;
+    max-width: 540px;
+    @media(max-width: 414px){
+        width: 100%;
+    }
 `
 export default function LandingSection() {
   return (
-    <LandingSectionDiv>
+    <LandingSectionDiv className='heee'>
         <BigTextDiv>
             <HelloText>
                 Hi, my name is

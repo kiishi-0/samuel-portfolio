@@ -12,6 +12,7 @@ const WorkedSectionDiv = styled.section`
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    margin-bottom: 100px;
 `
 const WorkedInnerDiv = styled.div`
     display: flex;
@@ -19,6 +20,9 @@ const WorkedInnerDiv = styled.div`
     align-items: center;
     justify-content: center;
     width: 75%;
+    @media(max-width: 854px){
+        width: 100%;
+    }
     
 `
 const PlacesDiv = styled.div`
@@ -31,11 +35,23 @@ const PlacesDiv = styled.div`
     // background: red;
     border-left: 1px solid #002e69;
     // margin: 25px 0;
+    position: relative;
+    
+    @media(max-width: 805px){
+        width: max-content;
+        flex-direction: row;
+        border-left: none;
+        width: 100%;
+        border-bottom: 1px solid #002e69;
+        margin-bottom: 50px;
+        overflow-x: scroll;
+    }
 
 `
 const PlaceBtn = styled.button`
     width: 100%;
-    height: 35px;
+    min-height: 35px;
+    flex: 1;
     border: 0;
     text-align: left;
     background: none;
@@ -60,6 +76,10 @@ const JobsDiv = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     margin: 30px 0;
+    postion: relative;
+    @media(max-width: 805px){
+        flex-direction: column;
+    }
 `
 const JobInfoDiv = styled.div`
     width: 100%;

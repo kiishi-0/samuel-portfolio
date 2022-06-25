@@ -13,6 +13,9 @@ import PreviousWorksSection from './Components/PreviousWorksSection/PreviousWork
 const ComponentsWrapper = styled.div`
   width: 100%;
   padding: 0 10%;
+  @media(max-width: 414px){
+    padding: 0 7%;
+  }
 
 `
 

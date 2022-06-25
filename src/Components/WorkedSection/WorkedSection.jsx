@@ -18,7 +18,7 @@ const WorkedInnerDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 75%;
     @media(max-width: 854px){
         width: 100%;
@@ -99,6 +99,7 @@ const JobDesc = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    transition: all linear .25s;
     justify-content: flex-start;
 `
 const JD = styled.ul`
@@ -106,6 +107,7 @@ const JD = styled.ul`
     font-size: 16px;
     text-align: left;
     list-style: none;
+    height: 300px;
     li{
         transition: all .25s linear;
         margin: 10px 0;

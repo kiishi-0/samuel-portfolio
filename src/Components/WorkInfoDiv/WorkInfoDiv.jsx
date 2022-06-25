@@ -12,6 +12,12 @@ const WorkContent = styled.div`
     z-index: 10;
     justify-content: center;
     text-align: right;
+    padding: 20px;
+    @media(max-width: 768px){
+        text-align: left;
+        background: #112240e7;
+        grid-column: 1 / -1;
+    }
 `
 // const WorkImageDiv = styled.div`
 //     width: 350px;
@@ -54,11 +60,22 @@ const WorkInfoTextDiv = styled.div`
     :hover{
         box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
     }
+    @media(max-width: 768px){
+        background: none;
+        padding: 20px 0;
+        :hover{
+            box-shadow: 0;
+        }
+    }
 `
 const WorkInfoText = styled.p`
     color: #ccd6f6;
     font-size: 18px;
     font-family: 'Inter', sans-serif;
+    line-height: 28px; 
+    @media(max-width: 768px){
+        text-align: left;
+    }
 `
 const ToolsDiv = styled.ul`
     display: flex;
@@ -67,6 +84,9 @@ const ToolsDiv = styled.ul`
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+    @media(max-width: 768px){
+        justify-content: flex-start;
+    }
 `
 const ToolItems = styled.li`
     color: #a8b2d1;
@@ -74,6 +94,10 @@ const ToolItems = styled.li`
     list-style: none;
     font-size: 13px;
     margin: 0 0 0 10px;
+    @media(max-width: 768px){
+        margin: 0 10px 0 0;
+        color: #ccd6f6;
+    }
 `
 
 const LinksDiv = styled.div`
@@ -81,7 +105,10 @@ const LinksDiv = styled.div`
     width: 100%;
     justify-content: flex-end;
     align-items: center;
-    padding: 15px 0;
+    padding: 20px 0;
+    @media(max-width: 768px){
+        justify-content: flex-start;
+    }
 `
 
 const LinkTo = styled.a`
@@ -104,6 +131,12 @@ const ImageDiv = styled.div`
   :hover svg{
     stroke: #59D9B5;
     transition: all .25s linear;
+  }
+  @media(max-width: 768px){
+    svg{
+        stroke: #ccd6f6;
+        transition: all .25s linear;
+    }
   }
 `
 export default function WorkInfoDiv(props) {

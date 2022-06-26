@@ -21,11 +21,27 @@ const NavElements = styled.ol`
     display: flex;
     align-items: center;
     justify-content: flex-end; 
+    
+    
     li{
+        list-style: none;
         color:#59D9B5 ;
         font-size: 14px;
         font-family: 'Fira Code', monospace;
         margin: 0 25px;
+        counter-increment: item 1;
+        :before {
+            content: "0" counter(item) ".";
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        @media(max-width: 768px){
+            position: relative;
+            margin: 0px auto 20px;
+            :before{
+                display: block;
+            }
+        }
         a{
             text-decoration: none;
             color: #818DA6;
@@ -33,6 +49,11 @@ const NavElements = styled.ol`
                 color: #59D9B5;
             }
         }
+    }
+    @media(max-width: 768px){
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
 
 `
@@ -50,20 +71,121 @@ const ResumeButton = styled.button`
         background: #61dafb34;
     }
 `
+const NavColumn = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    @media(max-width: 768px;){
+        width: 100%;
+    }
+`
+const Logo = styled.p`
+    color: #64ffda;
+    font-family: 'Poppins', Roboto, sans-serif;
+`
+const BurgerBtn = styled.button`
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    border: none;
+`
+const BurgerContainer = styled.div`
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+`
+const BurgerBar = styled.div`
+    width: 30px; 
+    height: 2px;
+    background: #64ffda;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    :after{
+        position: absolute;
+        content: '';
+        width: 25px;
+        height: 2px;
+        bottom:10px;
+        right: 0; 
+        background: #64ffda;
+    }
+    :before{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 2px;
+        top: 10px;
+        right: 0; 
+        background: #64ffda;
+    }
+    @media(max-width: 768px){
+        display: block;
+    }
+`
 const NavLinks = styled.a`
 
 `
+const NavLinksContainer = styled.aside`
+
+    width: 100%;
+    transition: right .25s linear;
+    @media(max-width: 768px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(75vw, 400px);
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        background: #112240;
+    }
+    
+    
+`
 
 export default function Nav() {
+    const shiftNav = () =>{
+        let btn = document.getElementById("btn");
+        let aft = window.getComputedStyle(btn,':after')
+        let elements = document.getElementById("elements");
+        if(elements.style.right === "-100%"){
+            elements.style.right = '0';
+        }else{
+            elements.style.right = '-100%';
+        }
+        aft.transform = "rotate(90deg)";
+    }
   return (
     <NavContainer>
-        <NavElements start="01">
-            <li><NavLinks href='#about'>About</NavLinks></li>
-            <li><NavLinks href='#experience'>Experience</NavLinks></li>
-            <li><NavLinks href='#work'>Work</NavLinks></li>
-            <li><NavLinks href='#contacts'>Contact</NavLinks></li>
-            <NavLinks class="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer"><ResumeButton>Resume</ResumeButton></NavLinks>
-        </NavElements>
+        <NavColumn>
+            <Logo>Samuel Owolabi</Logo>
+            <BurgerContainer id="btn" onClick={shiftNav}>
+                <BurgerBtn>
+                    <BurgerBar></BurgerBar>
+                </BurgerBtn>
+            </BurgerContainer>
+        </NavColumn>
+        <NavLinksContainer id="elements">
+            <NavElements start="01" >
+                <li><NavLinks href='#about'>About</NavLinks></li>
+                <li><NavLinks href='#experience'>Experience</NavLinks></li>
+                <li><NavLinks href='#work'>Work</NavLinks></li>
+                <li><NavLinks href='#contacts'>Contact</NavLinks></li>
+                <NavLinks class="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer"><ResumeButton>Resume</ResumeButton></NavLinks>
+            </NavElements>
+        </NavLinksContainer>
+        
     </NavContainer>
   )
 }

@@ -19,6 +19,18 @@ const ComponentsWrapper = styled.div`
   }
 
 `
+// const BlurBack = styled.div`
+//     position: fixed;
+//     width: 100%;
+//     height: 100vh;
+//     display: none;
+//     top: 0;
+//     left: 0;
+//     -webkit-backdrop-filter: 10px; 
+//     backdrop-filter: 10px;
+//     background: #0a192f4d;
+//     z-index: 80; 
+// `
 
 function App() {
 
@@ -48,6 +60,7 @@ function App() {
             <WorkedSection></WorkedSection>
             <PreviousWorksSection></PreviousWorksSection>
             <Footer></Footer>
+            {/* <BlurBack id="bblur"></BlurBack> */}
           </div>
           )
         }

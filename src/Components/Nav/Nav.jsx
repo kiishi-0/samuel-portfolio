@@ -1,3 +1,4 @@
+import { display } from '@mui/system'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -13,6 +14,22 @@ const NavContainer = styled.nav`
     align-items: center;
     padding: 20px 20px;
     // background: green;
+    &.sticky{
+        width: 100%;
+        background: #0a192f4d;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 200;
+        position: fixed;
+        @media(max-width:904px){
+            width: 100%;
+            background: #0a192f4d;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 200;
+        }
+    }
+    
 `
 const NavElements = styled.ol`
     width: 100%;
@@ -139,33 +156,63 @@ const NavLinksContainer = styled.aside`
 
     width: 100%;
     transition: right .25s linear;
+    z-index: 100;
+    // :before{
+    //     position: absolute;
+    //     width: 100%;
+    //     content: '';
+    //     top: 0;
+    //     left: -100%;
+    //     background: #0a192f4d;
+    //     height: 100vh;
+    //     -webkit-backdrop-filter: blur(10px);
+    //     backdrop-filter: blur(10px)
+    // }
     @media(max-width: 768px){
         display: flex;
         align-items: center;
         justify-content: center;
         width: min(75vw, 400px);
         position: fixed;
-        right: -100%;
+        right: -150%;
         top: 0;
         height: 100vh;
         background: #112240;
+
     }
     
     
 `
 
+// const BlurBack = styled.div`
+//     position: absolute;
+//     width: 100%;
+//     height: 100vh;
+//     display: none;
+//     top: 0;
+//     left: 0;
+//     -webkit-backdrop-filter: 10px; 
+//     backdrop-filter: 10px;
+//     background: #0a192f4d;
+//     z-index: 70; 
+// `
+
 export default function Nav() {
     const shiftNav = () =>{
-        let btn = document.getElementById("btn");
-        let aft = window.getComputedStyle(btn,':after')
         let elements = document.getElementById("elements");
-        if(elements.style.right === "-100%"){
+        let bblur = document.getElementById("bblur");
+        if(elements.style.right === "-150%"){
             elements.style.right = '0';
+            bblur.style.display = 'block'
         }else{
-            elements.style.right = '-100%';
+            elements.style.right = '-150%';
+            bblur.style.display = 'none'
         }
-        aft.transform = "rotate(90deg)";
     }
+    window.addEventListener('scroll', function (){
+        var header = document.querySelector('nav');
+        header.classList.toggle('sticky', this.window.scrollY > 0)
+    })
   return (
     <NavContainer>
         <NavColumn>
@@ -178,14 +225,15 @@ export default function Nav() {
         </NavColumn>
         <NavLinksContainer id="elements">
             <NavElements start="01" >
-                <li><NavLinks href='#about'>About</NavLinks></li>
-                <li><NavLinks href='#experience'>Experience</NavLinks></li>
-                <li><NavLinks href='#work'>Work</NavLinks></li>
-                <li><NavLinks href='#contacts'>Contact</NavLinks></li>
+                <li><NavLinks onClick={shiftNav} href='#about'>About</NavLinks></li>
+                <li><NavLinks onClick={shiftNav} href='#experience'>Experience</NavLinks></li>
+                <li><NavLinks onClick={shiftNav} href='#work'>Work</NavLinks></li>
+                <li><NavLinks onClick={shiftNav} href='#contacts'>Contact</NavLinks></li>
                 <NavLinks class="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer"><ResumeButton>Resume</ResumeButton></NavLinks>
             </NavElements>
         </NavLinksContainer>
         
     </NavContainer>
+    
   )
 }

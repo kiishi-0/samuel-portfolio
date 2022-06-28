@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import github from '../../images/github.svg';
 
 const FooterContainer = styled.section`
   display: flex;
@@ -16,6 +15,13 @@ const ElementsDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  span{
+    width: 100%;
+    color: #818DA6;
+    font-size: 10px;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+  }
 `
 const LinkTo = styled.a`
   text-decoration: none;
@@ -29,6 +35,7 @@ const LinkTo = styled.a`
 `
 const Dev = styled(LinkTo)`
   font-size: 10px;
+  color: #59D9B5;
 `
 const ImageDiv = styled.div`
   width: 25px;
@@ -73,7 +80,12 @@ export default function Footer() {
         <LinkTo href="mailto:miame2019@gmail.com"rel='noopener' target="_blank">samuelowolabi@gmail.com</LinkTo>
       </ElementsDiv>
       <ElementsDiv>
-        <Dev href="https://kiishi-0.github.io/Portfolio/"rel='noopener' target="_blank" className='dev'>Developed by Iteoluwakiishi Oyewole</Dev>
+                <span>
+                  Designed by 
+                  <Dev href="https://github.com/bchiang7/v4" rel='noopener' target="_blank" className='dev'> Brittany Chang, </Dev>
+                  Developed by
+                  <Dev href="https://kiishi-0.github.io/Portfolio/"rel='noopener' target="_blank" className='dev'> Iteoluwakiishi Oyewole</Dev>
+                </span>
       </ElementsDiv>
 
     </FooterContainer>

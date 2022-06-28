@@ -1,4 +1,3 @@
-import { display } from '@mui/system'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -200,13 +199,10 @@ const NavLinksContainer = styled.aside`
 export default function Nav() {
     const shiftNav = () =>{
         let elements = document.getElementById("elements");
-        let bblur = document.getElementById("bblur");
         if(elements.style.right === "-150%"){
             elements.style.right = '0';
-            bblur.style.display = 'block'
         }else{
             elements.style.right = '-150%';
-            bblur.style.display = 'none'
         }
     }
     window.addEventListener('scroll', function (){
@@ -229,7 +225,7 @@ export default function Nav() {
                 <li><NavLinks onClick={shiftNav} href='#experience'>Experience</NavLinks></li>
                 <li><NavLinks onClick={shiftNav} href='#work'>Work</NavLinks></li>
                 <li><NavLinks onClick={shiftNav} href='#contacts'>Contact</NavLinks></li>
-                <NavLinks class="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer"><ResumeButton>Resume</ResumeButton></NavLinks>
+                <NavLinks className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer"><ResumeButton>Resume</ResumeButton></NavLinks>
             </NavElements>
         </NavLinksContainer>
         

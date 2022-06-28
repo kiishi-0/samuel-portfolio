@@ -13,6 +13,7 @@ const WorkedSectionDiv = styled.section`
     align-items: center;
     justify-content: center;
     margin-bottom: 100px;
+    padding-top: 100px;
 `
 const WorkedInnerDiv = styled.div`
     display: flex;
@@ -184,7 +185,7 @@ export default function WorkedSection() {
                     </JobIntro>
                     <JobDesc>
                         <JD>
-                            {jobInfo.specs.map(spec => <li>{spec}</li>)}
+                            {jobInfo.specs.map(spec => <li key={spec.indexOf(spec)}>{spec}</li>)}
                         </JD>
                     </JobDesc>
                 </JobInfoDiv>

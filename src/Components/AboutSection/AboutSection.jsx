@@ -11,7 +11,7 @@ const AboutSectionDiv = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 40px 0 100px;
+    padding: 150px 0 100px;
 
 `
 const AboutContent = styled.div`

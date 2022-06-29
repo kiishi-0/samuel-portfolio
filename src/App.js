@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import LandingSection from './Components/LandingSection/LandingSection';
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import styled from 'styled-components';
